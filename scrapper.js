@@ -15,7 +15,7 @@ const CREDS = {
 
 module.exports = async () => {
     const browser = await puppeteer.launch({
-        headless: true
+        headless: (/true/i).test(process.env.HEADLESS)
     });
 
     const page = await browser.newPage();
